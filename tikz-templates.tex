@@ -1,0 +1,41 @@
+\usetikzlibrary{shapes.arrows}
+
+%%{ ARROWS
+
+\tikzset{
+  myarrow/.style={
+    draw,
+    fill=orange,
+    single arrow,
+    minimum height=3.5ex,
+    single arrow head extend=1ex
+  }
+}
+
+\newcommand{\arrowup}{%
+  \vspace{-0.8em}
+  \tikz [baseline=-0.5ex]{\node [myarrow,rotate=90] {};}
+  \vspace{-1.4em}
+}
+
+\newcommand{\arrowdown}{%
+  \vspace{-0.8em}
+  \tikz [baseline=-1ex]{\node [myarrow,rotate=-90] {};}
+  \vspace{-1.5em}
+}
+
+\newcommand{\arrowright}{%
+  \tikz [baseline=-1ex]{\node [myarrow,rotate=0] {};}
+}
+
+\newcommand{\arrowleft}{%
+  \tikz [baseline=-1ex]{\node [myarrow,rotate=180] {};}
+}
+
+%%}
+
+%%{ CHECKMARK
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+%%}
