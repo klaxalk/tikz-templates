@@ -1,4 +1,4 @@
-\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.arrows,backgrounds,arrows,automata,shapes,positioning,calc,through}
 
 %%{ ARROWS
 
@@ -39,3 +39,46 @@
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
 %%}
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\tikzset{
+  state/.style={
+    rectangle,
+    draw=white, very thick,
+    minimum height=1.0em,
+    text centered,
+  },
+  state_gray/.style={
+    rectangle,
+    draw=white, very thick,
+    fill=gray,
+    minimum height=1.0em,
+    text centered,
+  },
+  final_state/.style={
+    rectangle,
+    rounded corners,
+    draw=white, very thick,
+    minimum height=2em,
+    text centered,
+  },
+  initial_state/.style={
+    rectangle,
+    double=white,
+    double distance=1pt,
+    inner sep=2pt,
+    draw=white, very thick,
+    minimum height=2em,
+    text centered,
+  },
+  point/.style={
+    circle,
+    inner sep=0pt,
+    minimum size=3pt,
+    fill=red
+  },
+}
+
